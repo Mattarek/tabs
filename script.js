@@ -4,6 +4,7 @@ class Tabs {
         this.config = Array.isArray(config) ? config : [config];
         this.activeTab = 0;
         this.mainElement = document.querySelector('.content');
+        this.tabs = this.container.querySelectorAll('.tab');
         this.render();
     }
 
@@ -35,7 +36,9 @@ class Tabs {
 
             this.container.appendChild(ulListElement);
         });
-
+        const tabs = this.container.querySelectorAll('.tab');
+        tabs[0].classList.add('active');
+        console.log(tabs);
         this.mainElement.textContent = this.config[0].component;
     }
 }
