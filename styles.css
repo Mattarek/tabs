@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#tabs-container {
+    display: flex;
+    justify-content: start;
+    flex-flow: row wrap;
+}
+
+.tab {
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid #a2a2a2bc;
+    padding: 0.75rem;
+    width: 75px;
+
+    line-height: 30px;
+}
+
+.tab.active {
+    border-bottom: 4px solid red;
+}
+
+li {
+    display: inline-block;
+}
+
+.component {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+}
+
+.content.active {
+    display: inline-block;
+}

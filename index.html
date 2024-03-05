@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<nav id="tabs-container"></nav>
+
+<script src="./script.js"></script>
+<script>
+      const tabsData = [
+        { label: 'Tab 1', component: 'Content for Tab 1' },
+        { label: 'Tab 2', component: 'Content for Tab 2' },
+        { label: 'Tab 3', component: 'Content for Tab 3' },
+        { label: 'Tab 4', component: 'Content for Tab 4' },
+        { label: 'Tab 5', component: 'Content for Tab 5' },
+        { label: 'Tab 6', component: 'Content for Tab 6' },
+        
+    ];
+
+    const tabsComponent = new Tabs('tabs-container', tabsData);
+</script>
+</body>
+</html>
