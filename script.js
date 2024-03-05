@@ -3,17 +3,16 @@ class Tabs {
         this.container = document.getElementById(container);
         this.config = Array.isArray(config) ? config : [config];
         this.activeTab = 0;
-        this.contentElement = null;
-        this.divListAdded = false;
+        this.mainElement = document.querySelector('.content');
         this.render();
     }
 
     changeTab(index) {
-        this.divListAdded = !this.divListAdded;
         const tabs = this.container.querySelectorAll('.tab');
 
         tabs[this.activeTab].classList.remove('active');
         tabs[index].classList.add('active');
+        this.mainElement.textContent = this.config[index].component;
         this.activeTab = index;
     }
 
@@ -23,8 +22,10 @@ class Tabs {
         this.config.forEach((tab, index) => {
             const liListElement = document.createElement('li');
             const headerListElement = document.createElement('h2');
+
             ulListElement.appendChild(liListElement);
             liListElement.appendChild(headerListElement);
+
             liListElement.classList.add('tab');
             headerListElement.textContent = tab.label;
 
@@ -34,5 +35,7 @@ class Tabs {
 
             this.container.appendChild(ulListElement);
         });
+
+        this.mainElement.textContent = this.config[0].component;
     }
 }
